@@ -3,37 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ウェブサイトテンプレート配布サイト</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>ウェブサイトテンプレート配布</title>
+    <link rel="icon" href="https://sk0528jp.github.io/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* CSSセクション */
+        @font-face {
+            font-family: 'MiSans';
+            src: url('https://sk0528jp.github.io/font/MiSans-Normal.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --dark-bg: #121212;
+            --dark-surface: #1E1E1E;
+            --matcha-green: #5F7354;
+            --text-primary: #E8E8E8;
+            --text-secondary: #A0A0A0;
+            --font-family: 'Roboto', 'MiSans', sans-serif;
+            --shadow: 0 4px 6px rgba(0,0,0,0.4);
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--matcha-green);
+            color: var(--text-primary);
+            text-align: center;
+            padding: 4rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .template-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .template-card {
+            background-color: var(--dark-surface);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--text-primary);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+        }
+
+        .template-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 2px solid var(--matcha-green);
+        }
+
+        .template-card-content {
+            padding: 1.5rem;
+        }
+
+        .template-card-content h2 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--matcha-green);
+        }
+
+        .template-card-content p {
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        .action-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-buttons a {
+            flex-grow: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .action-buttons a .material-icons {
+            margin-right: 0.5rem;
+        }
+
+        .download-button {
+            background-color: var(--matcha-green);
+            color: var(--text-primary);
+        }
+
+        .download-button:hover {
+            background-color: #728A6A;
+        }
+
+        .preview-button {
+            background-color: transparent;
+            color: var(--matcha-green);
+            border: 2px solid var(--matcha-green);
+        }
+
+        .preview-button:hover {
+            background-color: var(--matcha-green);
+            color: var(--text-primary);
+        }
+
+        footer {
+            background-color: var(--dark-surface);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--matcha-green);
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <h1>ウェブサイトテンプレート</h1>
-        <p>無料で使えるレスポンシブなテンプレート集です。</p>
+        <p>あなたのプロジェクトにぴったりのデザインを見つけよう</p>
     </header>
 
-    <main>
-        <div class="template-list">
-            <a href="templates/template-01/index.html" class="template-card">
-                <img src="https://via.placeholder.com/400x300.png?text=Template+01+Preview" alt="テンプレート01のプレビュー画像">
-                <h2>テンプレート 01</h2>
-                <p>シンプルでモダンなデザインのテンプレートです。</p>
-            </a>
-
-            <a href="templates/template-02/index.html" class="template-card">
-                <img src="https://via.placeholder.com/400x300.png?text=Template+02+Preview" alt="テンプレート02のプレビュー画像">
-                <h2>テンプレート 02</h2>
-                <p>写真が映えるポートフォリオ向けのテンプレートです。</p>
-            </a>
-
+    <main class="container">
+        <div class="template-list" id="templateList">
             </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 ウェブサイトテンプレート配布サイト</p>
+        <p>
+            &copy; 2025 ウェブサイトテンプレート配布サイト | 
+            製作者: <a href="https://sk0528jp.github.io/" target="_blank" rel="noopener noreferrer">SK0528JP</a>
+        </p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // JavaScriptセクション
+        const templates = [
+            {
+                name: "テンプレート 01",
+                description: "MiSansフォントを活かした、ミニマルで落ち着いた印象のコーポレートサイト向けテンプレート。",
+                previewImage: "https://via.placeholder.com/400x300.png?text=Template+01+Preview",
+                downloadLink: "templates/template-01/template-01.zip",
+                previewLink: "templates/template-01/template-01.html"
+            },
+            {
+                name: "テンプレート 02",
+                description: "写真を大胆に配置した、ポートフォリオやクリエイター向けのダークテーマテンプレート。",
+                previewImage: "https://via.placeholder.com/400x300.png?text=Template+02+Preview",
+                downloadLink: "templates/template-02/template-02.zip",
+                previewLink: "templates/template-02/template-02.html"
+            },
+            {
+                name: "テンプレート 03",
+                description: "ランディングページに特化した、コンバージョンを意識したデザインテンプレート。",
+                previewImage: "https://via.placeholder.com/400x300.png?text=Template+03+Preview",
+                downloadLink: "templates/template-03/template-03.zip",
+                previewLink: "templates/template-03/template-03.html"
+            }
+            // 新しいテンプレートを追加する場合は、この配列にオブジェクトを追加してください
+        ];
+
+        const templateList = document.getElementById('templateList');
+
+        templates.forEach(template => {
+            const card = document.createElement('div');
+            card.className = 'template-card';
+            card.innerHTML = `
+                <img src="${template.previewImage}" alt="${template.name}のプレビュー画像">
+                <div class="template-card-content">
+                    <h2>${template.name}</h2>
+                    <p>${template.description}</p>
+                    <div class="action-buttons">
+                        <a href="${template.downloadLink}" class="download-button" download>
+                            <span class="material-icons">download</span> ダウンロード
+                        </a>
+                        <a href="${template.previewLink}" class="preview-button">
+                            <span class="material-icons">visibility</span> プレビュー
+                        </a>
+                    </div>
+                </div>
+            `;
+            templateList.appendChild(card);
+        });
+    </script>
 </body>
 </html>
